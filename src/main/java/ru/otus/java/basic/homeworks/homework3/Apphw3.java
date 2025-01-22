@@ -8,20 +8,14 @@ public class Apphw3 {
         System.out.println("Введите целое число от 1 до 5");
         int result = scanner.nextInt();
 
-        if (result == 1){
-            greetings();
-        } else if (result == 2){
-            checkSign(3, -4,-5);
-        } else if (result == 3){
-            selectColor();
-        } else if (result == 4){
-            compareNumbers();
-        } else if (result == 5){
-            addOrSubtractAndPrint(10, 5,true);
-        } else {
-            System.out.println("Вы ввели не верное число. Введите число от 1 до 5");
+        switch (result){
+            case 1 -> greetings();
+            case 2 -> checkSign(3, -4,-5);
+            case 3 -> selectColor();
+            case 4 -> compareNumbers();
+            case 5 -> addOrSubtractAndPrint(10, 5,true);
+            default -> System.out.println("Вы ввели не верное число. Введите число от 1 до 5");
         }
-
     }
     public static void greetings (){
         System.out.println("Hello");
@@ -33,8 +27,7 @@ public class Apphw3 {
         int sum_int = a + b + c;
         if (sum_int >= 0) {
             System.out.println("Сумма положительная");
-        }
-        if (sum_int <= 0) {
+        } else {
             System.out.println("Сумма отрицательная");
         }
     }
