@@ -31,4 +31,11 @@ public class Apphw7 {
         System.out.println();
         System.out.println(sum);
     }
+    /**
+     * Реализовать метод, который принимает в качестве аргумента int size и
+     * печатает в консоль квадрат из символов * со сторонами соответствующей длины;
+     */
+    public static void printSquareSize(int size) {
+
+    }
 }
