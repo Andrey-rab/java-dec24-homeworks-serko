@@ -5,10 +5,14 @@ public class Apphw7 {
         int[][] arr = new int[5][5];
         int[][] table = {
                 {1, -2, 3},
-                {-4, 5, 6},
-                {7, -8, 9}
+                {11, -1, 50},
+                {10, -21, 9},
         };
-        sumOfPositiveElements(table);
+        // sumOfPositiveElements(table);
+        // printSquareSize(5);
+        // diagonal(table);
+        // System.out.println(findMax(table));
+        System.out.println(sumRow(table));
     }
 
     /**
@@ -31,11 +35,67 @@ public class Apphw7 {
         System.out.println();
         System.out.println(sum);
     }
+
     /**
      * Реализовать метод, который принимает в качестве аргумента int size и
      * печатает в консоль квадрат из символов * со сторонами соответствующей длины;
      */
     public static void printSquareSize(int size) {
+        int[][] square = new int[size][size];
+        for (int i = 0; i < square.length; i++ ){
+            for (int j = 0; j < square[i].length; j++ ){
+                System.out.print("*" + " ");
+            }
+            System.out.println();
+        }
+    }
 
+    /**
+     * Реализовать метод, принимающий в качестве аргумента квадратный двумерный целочисленный массив, и
+     * зануляющий его диагональные элементы (можете выбрать любую из диагоналей, или занулить обе).
+     * Проверять количество строк и столбцов не требуется, условие “квадратности” нужно чтобы упростить вам
+     * работу с диагоналями
+     */
+    public static void diagonal(int[][] array) {
+        for (int i = 0; i < array.length; i++ ){
+            array[i][0+i] = 0;
+            for (int j = 0; j < array[i].length; j++ ){
+                System.out.print(array[i][j] + " ");
+            }
+            System.out.println();
+        }
+    }
+
+    /**
+     * Реализовать метод findMax(int[][] array) который должен найти и вернуть максимальный элемент массива
+     */
+    public static int findMax(int[][] array) {
+        int valueMax = 0;
+        for (int i = 0; i < array.length; i++ ){
+            for (int j = 0; j < array[i].length; j++ ){
+                if (array[i][j] > valueMax){
+                    valueMax = array[i][j];
+                }
+            }
+        }
+        return valueMax;
+    }
+
+    /**
+     * Реализуйте метод, который считает сумму элементов второй строки или столбца двумерного массива (по
+     * вашему выбору), если второй строки/столбца не существует, то в качестве результата необходимо вернуть -1
+     */
+    public static int sumRow(int[][] array) {
+        int sum = 0;
+        for (int i = 0; i < array.length; i++ ){
+            for (int j = 0; j < array[i].length; j++ ){
+                if (i == 1) {
+                    sum += array[i][j];
+                } else if (array.length < 2){
+                    sum = -1;
+                }
+            }
+        }
+        return sum;
     }
 }
