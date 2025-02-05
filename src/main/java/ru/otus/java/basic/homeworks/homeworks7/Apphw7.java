@@ -4,15 +4,15 @@ public class Apphw7 {
     public static void main(String[] args) {
         int[][] arr = new int[5][5];
         int[][] table = {
-                {1, -2, 3},
-                {11, -1, 50},
-                {10, -21, 9},
+                {-14, -25, -36},
+                {-11, -13, -50},
+                {-10, -21, -9},
         };
         // sumOfPositiveElements(table);
         // printSquareSize(5);
         // diagonal(table);
         // System.out.println(findMax(table));
-        System.out.println(sumRow(table));
+         System.out.println(sumRow(table));
     }
 
     /**
@@ -41,12 +41,11 @@ public class Apphw7 {
      * печатает в консоль квадрат из символов * со сторонами соответствующей длины;
      */
     public static void printSquareSize(int size) {
-        int[][] square = new int[size][size];
-        for (int i = 0; i < square.length; i++ ){
-            for (int j = 0; j < square[i].length; j++ ){
+        for (int i = 0; i < size - 1; i++ ){
+            for (int j = 0; j < size - 1; j++ ){
                 System.out.print("*" + " ");
             }
-            System.out.println();
+            System.out.println("*");
         }
     }
 
@@ -58,7 +57,7 @@ public class Apphw7 {
      */
     public static void diagonal(int[][] array) {
         for (int i = 0; i < array.length; i++ ){
-            array[i][0+i] = 0;
+            array[i][i] = 0;
             for (int j = 0; j < array[i].length; j++ ){
                 System.out.print(array[i][j] + " ");
             }
@@ -70,7 +69,7 @@ public class Apphw7 {
      * Реализовать метод findMax(int[][] array) который должен найти и вернуть максимальный элемент массива
      */
     public static int findMax(int[][] array) {
-        int valueMax = 0;
+        int valueMax = array[0][0];
         for (int i = 0; i < array.length; i++ ){
             for (int j = 0; j < array[i].length; j++ ){
                 if (array[i][j] > valueMax){
@@ -87,12 +86,14 @@ public class Apphw7 {
      */
     public static int sumRow(int[][] array) {
         int sum = 0;
+        if(array.length < 2){
+            sum = -1;
+            return sum;
+        }
         for (int i = 0; i < array.length; i++ ){
             for (int j = 0; j < array[i].length; j++ ){
                 if (i == 1) {
                     sum += array[i][j];
-                } else if (array.length < 2){
-                    sum = -1;
                 }
             }
         }
