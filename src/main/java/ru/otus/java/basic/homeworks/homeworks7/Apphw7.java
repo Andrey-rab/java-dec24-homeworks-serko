@@ -9,10 +9,10 @@ public class Apphw7 {
                 {-10, -21, -9},
         };
         // sumOfPositiveElements(table);
-        // printSquareSize(5);
+         printSquareSize(5);
         // diagonal(table);
         // System.out.println(findMax(table));
-         System.out.println(sumRow(table));
+        // System.out.println(sumRow(table));
     }
 
     /**
@@ -41,7 +41,7 @@ public class Apphw7 {
      * печатает в консоль квадрат из символов * со сторонами соответствующей длины;
      */
     public static void printSquareSize(int size) {
-        for (int i = 0; i < size - 1; i++ ){
+        for (int i = 0; i < size; i++ ){
             for (int j = 0; j < size - 1; j++ ){
                 System.out.print("*" + " ");
             }
