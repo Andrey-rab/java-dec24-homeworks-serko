@@ -25,9 +25,33 @@ public class Apphw10 {
                 users[i].printUserInfo();
             }
         }
+        System.out.println(" ");
 
         Box myBox = new Box(30, "red");
+        myBox.printInfoBox();
         myBox.open();
+        myBox.close();
+        myBox.close();
+        myBox.open();
+        myBox.printInfoBox();
+
+        myBox.changeColor("black");
+
+        myBox.printInfoBox();
+
+        myBox.putItem("ручка");
+
+        myBox.printInfoBox();
+        myBox.close();
+        myBox.open();
+
+        myBox.printInfoBox();
+
+        myBox.putItem("карандаш");
+
+        myBox.retrieveItem();
+
+        myBox.printInfoBox();
 
     }
 }
