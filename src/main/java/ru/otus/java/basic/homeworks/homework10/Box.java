@@ -103,7 +103,7 @@ public class Box {
 
     }
 
-    public void printInfoBox() {
+    public void printInfo() {
         System.out.println("Информация о коробке: ");
         System.out.println("Цвет: " + color);
         System.out.println("Размер: " + size);

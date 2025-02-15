@@ -28,30 +28,30 @@ public class Apphw10 {
         System.out.println(" ");
 
         Box myBox = new Box(30, "red");
-        myBox.printInfoBox();
+        myBox.printInfo();
         myBox.open();
         myBox.close();
         myBox.close();
         myBox.open();
-        myBox.printInfoBox();
+        myBox.printInfo();
 
         myBox.changeColor("black");
 
-        myBox.printInfoBox();
+        myBox.printInfo();
 
         myBox.putItem("ручка");
 
-        myBox.printInfoBox();
+        myBox.printInfo();
         myBox.close();
         myBox.open();
 
-        myBox.printInfoBox();
+        myBox.printInfo();
 
         myBox.putItem("карандаш");
 
         myBox.retrieveItem();
 
-        myBox.printInfoBox();
+        myBox.printInfo();
 
     }
 }
