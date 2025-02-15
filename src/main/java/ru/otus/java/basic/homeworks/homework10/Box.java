@@ -30,14 +30,11 @@ public class Box {
     public boolean isOpen() {
         return isOpen;
     }
-    public void setOpen(boolean open) {
-        isOpen = open;
-    }
 
     public String getItem() {
         return item;
     }
-    public void setIten(String item) {
+    public void setItem(String item) {
         this.item = item;
     }
 
