@@ -5,18 +5,18 @@ public class Cat {
     private int appetite;
     private boolean isFull;
 
-    public Cat(String name, int appetite){
+    public Cat(String name, int appetite) {
         this.name = name;
         this.appetite = appetite;
         this.isFull = false;
     }
 
-    public void feed(Plate plate){
+    public void feed(Plate plate) {
         if (isFull) {
             System.out.println("Кот " + name + " сыт.");
             return;
         }
-        if (plate.decreaseFood(appetite)){
+        if (plate.decreaseFood(appetite)) {
             isFull = true;
             System.out.println(name + " поел и сыт.");
         } else {
@@ -25,7 +25,7 @@ public class Cat {
 
     }
 
-    public void info(){
+    public void info() {
         System.out.println("Имя животного: " + name);
         System.out.println("Аппетит животного: " + appetite);
         System.out.println("Сытость: " + (isFull ? "Сыт" : "Голоден"));

@@ -24,8 +24,8 @@ public class Apphw12 {
          * 7) Создать массив котов и тарелку с едой, попросить всех котов покушать
          * из этой тарелки и потом вывести информацию о сытости котов в консоль.
          */
-        Cat kisa = new Cat("Kisa", 10);
-        Plate objplate = new Plate(100);
+        Cat cat = new Cat("Kisa", 10);
+        Plate plate = new Plate(100);
 
         Cat[] cats = {
                 new Cat("Barsik", 15),
@@ -34,24 +34,24 @@ public class Apphw12 {
                 new Cat("Nik", 100),
         };
 
-        kisa.info();
-        objplate.info();
+        cat.info();
+        plate.info();
 
-        objplate.addFood(3);
-        objplate.info();
+        plate.addFood(3);
+        plate.info();
 
-        objplate.decreaseFood(10);
-        objplate.info();
+        plate.decreaseFood(10);
+        plate.info();
 
-        kisa.feed(objplate);
-        kisa.info();
-        kisa.feed(objplate);
-        objplate.info();
+        cat.feed(plate);
+        cat.info();
+        cat.feed(plate);
+        plate.info();
 
-        for(int i = 0; i < cats.length; i++){
-            cats[i].feed(objplate);
+        for (int i = 0; i < cats.length; i++) {
+            cats[i].feed(plate);
         }
-        for (int i = 0; i < cats.length; i++){
+        for (int i = 0; i < cats.length; i++) {
             cats[i].info();
             System.out.println();
         }
