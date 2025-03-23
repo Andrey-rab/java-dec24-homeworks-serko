@@ -7,12 +7,14 @@ public class Bicycle extends Transport {
     public String getType() {
         return "Велосипед";
     }
+
     @Override
     public void move(int distance, TerrainType terrain) {
-        if (terrain == TerrainType.РАВНИНА){
+        if (terrain == TerrainType.РАВНИНА) {
             System.out.println("Велосипед проехал " + distance + " км. по " + terrain);
         } else {
             System.out.println("Велосипед не может ехать по " + terrain);
         }
+
     }
 }

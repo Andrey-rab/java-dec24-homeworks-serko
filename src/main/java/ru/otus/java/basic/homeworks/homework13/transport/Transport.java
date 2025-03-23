@@ -6,4 +6,5 @@ public abstract class Transport {
     public abstract String getType();
 
     public abstract void move(int distance, TerrainType terrain);
+
 }

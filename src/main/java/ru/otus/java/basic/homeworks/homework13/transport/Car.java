@@ -10,7 +10,7 @@ public class Car extends Transport {
 
     @Override
     public void move(int distance, TerrainType terrain) {
-        if (terrain == TerrainType.РАВНИНА){
+        if (terrain == TerrainType.РАВНИНА) {
             System.out.println("Машина проехала " + distance + " км. по равнине");
         } else {
             System.out.println("Машина не может ехать по " + terrain);

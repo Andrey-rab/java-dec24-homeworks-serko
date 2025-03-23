@@ -8,9 +8,10 @@ public class AllTerrainVehicle extends Transport {
         return "Вездеход";
     }
 
+
     @Override
     public void move(int distance, TerrainType terrain) {
-        if (terrain == TerrainType.РАВНИНА || terrain == TerrainType.ГУСТОЙ_ЛЕС || terrain == TerrainType.БОЛОТО){
+        if (terrain == TerrainType.РАВНИНА || terrain == TerrainType.ГУСТОЙ_ЛЕС || terrain == TerrainType.БОЛОТО) {
             System.out.println("Вездиход проехал " + distance + " км. по " + terrain);
         } else {
             System.out.println("Вездиход не может ехать по " + terrain);
