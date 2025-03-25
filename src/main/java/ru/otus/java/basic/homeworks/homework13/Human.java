@@ -12,18 +12,36 @@ public class Human {
     }
 
     public void setTransport(Transport transport) {
-        this.currentTransport = transport;
-        System.out.println(name + " сел на транспорт: " + transport.getType());
+        if (currentTransport == null){
+            this.currentTransport = transport;
+            System.out.println(name + " сел на транспорт: " + transport.getType());
+        } else {
+            System.out.println(name + " нужно сначала слезть с транспорта: " + currentTransport.getType());
+        }
+
         System.out.println();
     }
 
+    public void dropTransport(){
+        if(currentTransport == null){
+            System.out.println(name + " не имеет транспорта.");
+        } else {
+            System.out.println(name + " слез с " + currentTransport.getType());
+            currentTransport = null;
+        }
+        System.out.println();
+
+    }
 
     public void go(int distance, TerrainType terrain) {
         if (currentTransport == null) {
             System.out.println(name + " идёт пешком " + distance + " км по " + terrain + ".");
         } else {
-            System.out.println(name + " имеет транспорт " + currentTransport.getType() + ":");
-            currentTransport.move(distance, terrain);
+            System.out.println(name + " пытается поехать на " + currentTransport.getType() + ":");
+            boolean success = currentTransport.move(distance, terrain);
+            if (!success) {
+                System.out.println(name + " не смог выполнить перемещение.");
+            }
         }
         System.out.println();
     }

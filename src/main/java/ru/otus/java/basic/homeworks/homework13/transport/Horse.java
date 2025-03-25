@@ -2,18 +2,30 @@ package ru.otus.java.basic.homeworks.homework13.transport;
 
 import ru.otus.java.basic.homeworks.homework13.TerrainType;
 
-public class Horse extends Transport {
+public class Horse implements Transport {
+    private int stamina; // выносливость
+
+    public Horse(int stamina) {
+        this.stamina = stamina;
+    }
+
     @Override
     public String getType() {
         return "Лошадь";
     }
 
     @Override
-    public void move(int distance, TerrainType terrain) {
-        if (terrain == TerrainType.РАВНИНА || terrain == TerrainType.ГУСТОЙ_ЛЕС) {
-            System.out.println("Лошадь проскакала " + distance + " км. по " + terrain);
-        } else {
-            System.out.println("Лошадь не может ехать по " + terrain);
+    public boolean move(int distance, TerrainType terrain) {
+        if (terrain == TerrainType.БОЛОТО) {
+            System.out.println("Лошадь не может пройти по " + terrain);
+            return false;
         }
+        if (stamina < distance) {
+            System.out.println("Лошадь устала. Осталось сил: " + stamina + ", требуется: " + distance);
+            return false;
+        }
+        stamina -= distance;
+        System.out.println("Лошадь прошла " + distance + " км по " + terrain + ". Осталось сил: " + stamina);
+        return true;
     }
 }

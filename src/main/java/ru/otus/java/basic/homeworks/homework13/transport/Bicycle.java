@@ -2,19 +2,19 @@ package ru.otus.java.basic.homeworks.homework13.transport;
 
 import ru.otus.java.basic.homeworks.homework13.TerrainType;
 
-public class Bicycle extends Transport {
+public class Bicycle implements Transport {
     @Override
     public String getType() {
         return "Велосипед";
     }
 
     @Override
-    public void move(int distance, TerrainType terrain) {
-        if (terrain == TerrainType.РАВНИНА) {
-            System.out.println("Велосипед проехал " + distance + " км. по " + terrain);
-        } else {
+    public boolean move(int distance, TerrainType terrain) {
+        if (terrain == TerrainType.БОЛОТО) {
             System.out.println("Велосипед не может ехать по " + terrain);
+            return false;
         }
-
+        System.out.println("Велосипед проехал " + distance + " км по " + terrain + ".");
+        return true;
     }
 }

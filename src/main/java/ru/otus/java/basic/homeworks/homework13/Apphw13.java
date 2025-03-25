@@ -1,6 +1,7 @@
 package ru.otus.java.basic.homeworks.homework13;
 
 import ru.otus.java.basic.homeworks.homework13.transport.AllTerrainVehicle;
+import ru.otus.java.basic.homeworks.homework13.transport.Bicycle;
 import ru.otus.java.basic.homeworks.homework13.transport.Car;
 import ru.otus.java.basic.homeworks.homework13.transport.Horse;
 
@@ -34,9 +35,13 @@ public class Apphw13 {
         Human human = new Human("Vasya");
 
         human.printInfo();
-        human.setTransport(new AllTerrainVehicle());
+        human.setTransport(new AllTerrainVehicle(4));
+        human.setTransport(new Bicycle());
         human.printInfo();
         human.go(3, TerrainType.БОЛОТО);
         human.printInfo();
+        human.dropTransport();
+        human.printInfo();
+
     }
 }
