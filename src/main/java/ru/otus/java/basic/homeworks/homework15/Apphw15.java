@@ -22,19 +22,29 @@ public class Apphw15 {
                 {"13", "14", "15", "16"}
         };
 
-        String[][] incorrectArray = {
+        String[][] wrongSizeArray = {
                 {"1", "2", "3"},
                 {"4", "5", "6"},
                 {"7", "8", "9"},
                 {"10", "11", "12"}
         };
 
+        String[][] wrongDataArray = {
+                {"1", "2", "3", "4"},
+                {"5", "6", "7", "8"},
+                {"9", "буква", "11", "12"},
+                {"13", "14", "15", "16"}
+        };
+
         try {
-            ArrayChecker.checkArraySize(correctArray);
-            ArrayChecker.checkArraySize(incorrectArray);
+            int result = ArrayChecker.sumArray(wrongDataArray);
+            System.out.println("Сумма элементов массива: " + result);
         } catch (AppArraySizeException e) {
-            System.out.println("Сработало исключение" + e.getMessage());
+            System.out.println(" Произошла ошибка размера массива: " + e.getMessage());
+        } catch (AppArrayDataException e) {
+            System.out.println(" Произошла ошибка двнных в массиве: " + e.getMessage());
         }
+
 
     }
 
