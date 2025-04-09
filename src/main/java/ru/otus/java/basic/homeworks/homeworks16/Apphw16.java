@@ -1,4 +1,5 @@
 package ru.otus.java.basic.homeworks.homeworks16;
+
 import java.util.List;
 
 import java.util.ArrayList;
@@ -7,17 +8,23 @@ public class Apphw16 {
     public static void main(String[] args) {
         int min = -2;
         int max = 10;
-        List<Integer> list = List.of(-2, 0, 1, 6, 3, 8, 4, 10);
-        System.out.println(createListInRange(min, max));
-        System.out.println(sumGreaterThanFive(list));
+        //List<Integer> numbers = List.of(-2, 0, 1, 6, 3, 8, 4, 10);
+        List<Integer> numbers = new java.util.ArrayList<>(List.of(1, 2, 3, 4, 5));
+        //System.out.println(createListInRange(min, max));
+        //System.out.println(sumGreaterThanFive(numbers));
+        fillListWithValue(5, numbers);
+        System.out.println(numbers);
+        incrementListElements(2, numbers);
+        System.out.println(numbers);
     }
+
     /**
      * Реализуйте метод, принимающий в качестве аргументов числа min и max, и возвращающий ArrayList
      * с набором последовательных значений в указанном диапазоне (min и max включительно, шаг - 1);
      */
     public static ArrayList<Integer> createListInRange(int min, int max) {
         ArrayList<Integer> list = new ArrayList<>();
-        for (int i = min; i <= max; i++){
+        for (int i = min; i <= max; i++) {
             list.add(i);
         }
         return list;
@@ -29,8 +36,8 @@ public class Apphw16 {
      */
     public static int sumGreaterThanFive(List<Integer> numbers) {
         int sum = 0;
-        for (int number: numbers){
-            if (number > 5){
+        for (int number : numbers) {
+            if (number > 5) {
                 sum += number;
             }
         }
@@ -41,4 +48,20 @@ public class Apphw16 {
      * Реализуйте метод, принимающий в качестве аргументов целое число и ссылку на список,
      * метод должен переписать каждую заполненную ячейку списка указанным числом;
      */
+    public static void fillListWithValue(int value, List<Integer> list) {
+        for (int i = 0; i < list.size(); i++) {
+            list.set(i, value);
+        }
+    }
+
+    /**
+     * Реализуйте метод, принимающий в качестве аргументов целое число и
+     * ссылку на список, увеличивающий каждый элемент списка на указанное число;
+     */
+    public static void incrementListElements(int increment, List<Integer> list) {
+        for (int i = 0; i < list.size(); i++) {
+            int updateValue = list.get(i) + increment;
+            list.set(i, updateValue);
+        }
+    }
 }
