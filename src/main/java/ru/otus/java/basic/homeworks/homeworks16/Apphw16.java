@@ -12,10 +12,19 @@ public class Apphw16 {
         List<Integer> numbers = new java.util.ArrayList<>(List.of(1, 2, 3, 4, 5));
         //System.out.println(createListInRange(min, max));
         //System.out.println(sumGreaterThanFive(numbers));
-        fillListWithValue(5, numbers);
-        System.out.println(numbers);
+        //fillListWithValue(5, numbers);
+        //System.out.println(numbers);
         incrementListElements(2, numbers);
-        System.out.println(numbers);
+        //System.out.println(numbers);
+
+        List<Employee> employees = List.of(
+                new Employee("Tom",30),
+                new Employee("Eliz", 51),
+                new Employee("Rick", 22)
+        );
+
+        //System.out.println("Имена сотрудников: " + getEmployeeNames(employees));
+        System.out.println("Старше 25 лет: " + filterByMinAge(employees, 25));
     }
 
     /**
@@ -64,4 +73,39 @@ public class Apphw16 {
             list.set(i, updateValue);
         }
     }
+
+    /**
+     * Реализуйте метод, принимающий в качестве аргумента список сотрудников, и возвращающий список их имен;
+     *
+     * Реализуйте метод, принимающий в качестве аргумента список сотрудников и минимальный возраст,
+     * и возвращающий список сотрудников, возраст которых больше либо равен указанному аргументу;
+     *
+     * Реализуйте метод, принимающий в качестве аргумента список сотрудников и минимальный средний
+     * возраст, и проверяющий что средний возраст сотрудников превышает указанный аргумент;
+     *
+     * Реализуйте метод, принимающий в качестве аргумента список сотрудников, и
+     * возвращающий ссылку на самого молодого сотрудника.
+     */
+    public static List<String> getEmployeeNames(List<Employee> employees) {
+        List<String> names = new ArrayList<>();
+        for (Employee epm : employees){
+            names.add(epm.getName());
+        }
+        return names;
+    }
+
+    public static List<String> filterByMinAge(List<Employee> employees, int minAge) {
+        List<String> result = new ArrayList<>();
+        for(Employee epm : employees){
+            if(epm.getAge() >= minAge){
+                result.add(epm.getName());
+            }
+        }
+        return result;
+    }
+
+
+
+
+
 }
