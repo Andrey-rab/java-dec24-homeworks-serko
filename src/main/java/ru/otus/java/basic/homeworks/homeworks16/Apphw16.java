@@ -18,13 +18,16 @@ public class Apphw16 {
         //System.out.println(numbers);
 
         List<Employee> employees = List.of(
-                new Employee("Tom",30),
+                new Employee("Tom", 30),
                 new Employee("Eliz", 51),
                 new Employee("Rick", 22)
         );
 
         //System.out.println("Имена сотрудников: " + getEmployeeNames(employees));
-        System.out.println("Старше 25 лет: " + filterByMinAge(employees, 25));
+        //System.out.println("Старше 25 лет: " + filterByMinAge(employees, 25));
+        //System.out.println("Средний возраст выше 26? " + isAverageAgeAbove(employees, 26));
+        System.out.println("Самый молодой: " + findYoungestEmployee(employees));
+
     }
 
     /**
@@ -76,19 +79,19 @@ public class Apphw16 {
 
     /**
      * Реализуйте метод, принимающий в качестве аргумента список сотрудников, и возвращающий список их имен;
-     *
+     * <p>
      * Реализуйте метод, принимающий в качестве аргумента список сотрудников и минимальный возраст,
      * и возвращающий список сотрудников, возраст которых больше либо равен указанному аргументу;
-     *
+     * <p>
      * Реализуйте метод, принимающий в качестве аргумента список сотрудников и минимальный средний
      * возраст, и проверяющий что средний возраст сотрудников превышает указанный аргумент;
-     *
+     * <p>
      * Реализуйте метод, принимающий в качестве аргумента список сотрудников, и
      * возвращающий ссылку на самого молодого сотрудника.
      */
     public static List<String> getEmployeeNames(List<Employee> employees) {
         List<String> names = new ArrayList<>();
-        for (Employee epm : employees){
+        for (Employee epm : employees) {
             names.add(epm.getName());
         }
         return names;
@@ -96,16 +99,33 @@ public class Apphw16 {
 
     public static List<String> filterByMinAge(List<Employee> employees, int minAge) {
         List<String> result = new ArrayList<>();
-        for(Employee epm : employees){
-            if(epm.getAge() >= minAge){
+        for (Employee epm : employees) {
+            if (epm.getAge() >= minAge) {
                 result.add(epm.getName());
             }
         }
         return result;
     }
 
+    public static boolean isAverageAgeAbove(List<Employee> employees, int minAverageAge) {
+        int sumAgeEmployee = 0;
+        for (Employee epm : employees) {
+            sumAgeEmployee += epm.getAge();
+        }
+        if (minAverageAge > sumAgeEmployee / employees.size()) {
+            return true;
+        }
+        return false;
+    }
 
-
-
+    public static Employee findYoungestEmployee(List<Employee> employees) {
+        Employee youngest = employees.get(0);
+        for (Employee epm: employees){
+            if(epm.getAge() < youngest.getAge()){
+                youngest = epm;
+            }
+        }
+        return youngest;
+    }
 
 }
